@@ -1,6 +1,10 @@
 install:
 	uv sync
 
+update:
+	uv lock --upgrade
+	uv sync
+
 run:
 	uv run hexlet-python-package
 
@@ -18,4 +22,4 @@ check: test lint
 build:
 	uv build
 
-.PHONY: install test lint selfcheck check build
+.PHONY: install update test lint selfcheck check build
